@@ -1,0 +1,53 @@
+SERVER:
+cd C:\Program Files\MongoDB\Server\5.0\bin
+
+mongod
+
+CLIENT:
+cd C:\Program Files\MongoDB\Server\5.0\bin
+
+mongo
+
+show dbs
+
+use Mobiles
+
+db.mobdetails.insertOne({srno: 01, name: "OnePlus", price: 50000, type: "Phone"})
+
+db.mobsdetails.find().pretty()
+
+db.mobdetails.insertMany([
+{srno: 02, name: "Apple",  price: 75000, type: "Phone"}, 
+{srno: 03,name: "Redmi", price: 15000, type: "Tab"}, 
+{srno: 04,name: "Vivo", price: 25000, type: "Phone"}, 
+{srno: 05,name: "Oppo", price: 10000, type: "Tab"}, 
+{srno: 06,name: "Xiaomi", price: 30000, type: "Phone"}, 
+{srno: 07,name: "Realme", price: 20000, type: "Tab"}
+])
+
+db.mobdetails.find().pretty()
+
+db.mobdetails.updateOne({name: "Apple"}, {$set:{price: 100000}})
+
+db.mobdetails.find().pretty()
+
+db.mobdetails.updateMany({type:"Phone"}, {$set: {price: 50000}})
+
+db.mobdetails.find().pretty()
+
+db.mobdetails.replaceOne({name: "Oppo"}, {name: "Micromax"})
+
+db.mobdetails.find().pretty()
+
+db.mobdetails.deleteOne({"price":50000})
+
+db.mobdetails.find().pretty()
+
+db.mobdetails.deleteMany({type:"Phone"})
+
+db.mobdetails.find().pretty()
+
+
+
+
+
