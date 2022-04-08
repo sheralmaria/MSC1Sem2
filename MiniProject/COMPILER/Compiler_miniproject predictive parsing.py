@@ -59,16 +59,16 @@ class PredictiveParser:
 		green = Fore.GREEN
 		magenta = Fore.MAGENTA
 
-		print(f"{yellow}Non Terminal", end = "\t")
+		print(f"Non Terminal", end = "\t")
 		for terminal in self.terminals:
-			print(f"{yellow}{terminal}", end = "\t")
-		print(f"{yellow}$", end = "\n")
+			print(f"{terminal}", end = "\t")
+		print(f"$", end = "\n")
 
 		for entry in parsing_table:
-			print(f"{yellow}{entry}", end = "\t\t")
+			print(f"{entry}", end = "\t\t")
 			for cell in parsing_table[entry]:
 				color = green if cell is not None else magenta
-				print(f"{color}{cell}", end = "\t")
+				print(f"{cell}", end = "\t")
 			print(end = "\n")
 
 		print("\n\n\n")
