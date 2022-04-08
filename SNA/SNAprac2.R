@@ -1,0 +1,8 @@
+library("igraph")
+getwd()
+setwd("E:/CSV files")
+l=read.csv("edges.csv")
+n=read.csv("nodes.csv")
+g=graph.data.frame(d=l,vertices=n,directed = TRUE)
+plot(g)
+get.adjacency(g)
